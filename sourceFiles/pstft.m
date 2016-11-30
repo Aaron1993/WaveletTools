@@ -1,4 +1,4 @@
-function [nt,nf,power,ta,fa] = pwavelet_toyota(time,xn,fr,df,dt,fa)
+function [nt,nf,power,ta,fa] = pstft(time,xn,fr,df,dt,fa)
 % Author: Saito, Toyota company
 % Notes:
 % it seems to me that this is based on local fft insteaed of wavelet

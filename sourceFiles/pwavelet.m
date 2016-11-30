@@ -132,7 +132,7 @@ if wave.figs == 1
         ylabel('Data')
 
     hax2 = subplot('position',[0.08 0.34 0.65 0.4]);
-    contour(time,freq,power.c,25); set(gca,'yscale','log')
+    contour(time,freq,power.c,8); set(gca,'yscale','log')
         xlim([time(1),time(end)])
         ylim([min(freq),max(freq)])
         set(gca,'XtickLabel',[])
