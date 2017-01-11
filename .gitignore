@@ -44,3 +44,4 @@ Debug/
 *.msp
 *.lnk
 ._*
+examples/plot/fig/comp.fig

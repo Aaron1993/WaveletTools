@@ -1,5 +1,5 @@
 function [nt,nf,power,ta,fa] = pstft(time,xn,fr,df,dt,fa)
-% Author: Saito, Toyota company
+% Author: Saito, Toyota Company
 % Notes:
 % it seems to me that this is based on local fft insteaed of wavelet
 % wavelet should not have a fixed DT (see typical fft vs. wavelet figures)

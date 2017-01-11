@@ -17,18 +17,18 @@ fs = floor(1/time2(2));
 harm.df = 0.1;                  % freq resolution
 harm.fl = 1;                    % lowest freq
 harm.fh = 60;                   % highest freq
+harm.odr = 12;                  % psd fitting order
 wave.basis = 'morlet';          % wavelet type
 wave.figs = 1;                  % output boolean
 sigc.level = 0.95;              % significance level
 sigc.alpha = 0.1;               % lag coefficient
 sigc.range = [5,30];
-[power,confd,Fw,time] = pwavelet(x, fs, harm, wave, sigc);
+[power,Fw,confd,time] = pwavelet(x, fs, harm, wave, sigc);
 Pwn = (power.f-mean(power.f))./std(power.f);
 hfig = pubfig(gcf);
 %path = expfig('wavelet','-pdf','-emf',hfig);
 
-
-%% PSD
+%% Power spectral Density (PSD)
 order = 16;
 harm.df = 0.1;                  % freq resolution
 wd = fs/harm.df;
@@ -41,6 +41,7 @@ Pln = (dbm(Pl)-mean(dbm(Pl)))./std(dbm(Pl));
 %[time,Ft,power,avg] = pstft(time,x,[1,60],0.1,0.2,[5,30]);
 %Ptn = (avg-mean(avg))./std(avg);
 
+%% Plot results
 hfig=figure;
 subplot(211), semilogx(Fx,Pxn), hold on
 semilogx(Fl,Pln)
@@ -55,6 +56,6 @@ semilogx(Fw,Pwn)
 hfig = pubfig(hfig);
     hfig.LegendLoc = 'northwest';
     hfig.LineWidth = [2.2,1];
-path = expfig('comp','-pdf','-emf',hfig);
+%path = expfig('comp','-pdf','-emf',hfig);
     
     

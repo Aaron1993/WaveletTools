@@ -1,4 +1,4 @@
-function [power,confd,freq,time] = pwavelet(x,fs,harm,wave,sigc)
+function [power,freq,confd,time] = pwavelet(x,fs,harm,wave,sigc)
 % TWAVELET - proposed wavelet transform
 
 % 1. pre-process data
